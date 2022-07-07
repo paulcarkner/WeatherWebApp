@@ -1,0 +1,7 @@
+.backgroundMap {
+    position: absolute;
+    inset: 50% 0 0 0;
+    mask-image: linear-gradient(180deg, transparent 0%, black 25%);
+    mix-blend-mode: luminosity;
+    opacity: 0.3;
+}
