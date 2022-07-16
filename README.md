@@ -1,2 +1,2 @@
-# React_Starter_Template
-Created with CodeSandbox
+# WeatherWebApp
+Weather application built on React and OpenWeatherMap.org
