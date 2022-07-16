@@ -8,6 +8,7 @@
 
 .forecastPanel {
     backdrop-filter: blur(2px);
+    background: linear-gradient(15deg, #7ba9f244, #9ec0f644);
     border: 1px solid #fff2;
     box-shadow: 0.3em 0.3em 0.6em 0 #0004;
     padding: 1em;
@@ -26,7 +27,27 @@
     grid-template-rows: auto 1fr 10em;
 }
 
+.removeBtn {
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    margin-right: 0.6em;
+    font-size: 1.2em;
+    padding: 0;
+}
+
+    .removeBtn > span {
+        font-size: inherit;
+        transition: transform 0.5s ease;
+    }
+
+    .removeBtn:hover > span {
+        transform: translate(-20%, -50%) rotate(-30deg);
+    }
+
 .locationName {
+    display: inline-block;
     font-size: 1.3em;
     font-weight: bold;
 }
@@ -92,13 +113,6 @@
     .detailsContainer > div > div:last-child {
         font-weight: 600;
     }
-
-.detailTitle {
-    font-size: 0.8em;
-    font-weight: 200;
-    opacity: 0.8;
-    margin-bottom: 0.4em;
-}
 
 
 .currentDetails {

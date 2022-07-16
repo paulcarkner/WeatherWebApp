@@ -15,7 +15,6 @@ export default class LineChart extends React.Component {
     canvasChart = null;
 
     componentDidMount() {
-        //console.log(this.props);
         let major = this.props.major;
         this.canvasChart = new Chart(this.canvas.current, {
             type: 'line',
@@ -85,6 +84,12 @@ export default class LineChart extends React.Component {
 
     componentWillUnmount() {
         this.canvasChart.destroy();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props == prevProps) return;
+        this.canvasChart.destroy();
+        this.componentDidMount();
     }
 
     render() {

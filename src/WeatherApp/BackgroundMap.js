@@ -7,6 +7,7 @@ export default class BackgroundMap extends React.Component {
     constructor(props) {
         super(props);
         this.state = { isMounted: false, isLoadDelayed: false };
+        this.mapRef = React.createRef();
     }
 
     map = null;
@@ -22,7 +23,7 @@ export default class BackgroundMap extends React.Component {
         this.loader
             .load()
             .then((google) => {
-                this.map = new google.maps.Map(document.getElementById("map"), {
+                this.map = new google.maps.Map(this.mapRef.current, {
                     center: {
                         lat: this.props.location.lat,
                         lng: this.props.location.lon
@@ -189,7 +190,11 @@ export default class BackgroundMap extends React.Component {
                             ]
                         }
                     ],
-                    zoom: 9
+                    zoom: 9,
+                    draggable: false,
+                    zoomControl: false,
+                    scrollwheel: false,
+                    disableDoubleClickZoom: true
                 });
                 this.setState({ isMounted: true }, () => { if (this.state.isLoadDelayed) this.componentDidUpdate(null); });
             })
@@ -212,18 +217,10 @@ export default class BackgroundMap extends React.Component {
             title: null,
         });
         this.marker.setMap(this.map);
-    //    this.infoWindow = new google.maps.InfoWindow({
-    //        content: renderToString(<InfoWindow />).toString(),
-    //    });
-    //    this.marker.addListener("click", () => {
-    //        this.showInfoWindow();
-    //    });
-    //    this.showInfoWindow();
-    //    this.fetchForecast(this.props.location);
     }
 
 
     render() {
-        return <div id="map" className={Style.backgroundMap}></div>;
+        return <div id="map" className={Style.backgroundMap} ref={this.mapRef}></div>;
     }
 }
