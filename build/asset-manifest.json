@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/paulcarkner/WeatherWebApp/static/css/main.fd16010e.css",
+    "main.js": "/paulcarkner/WeatherWebApp/static/js/main.0802528a.js",
+    "index.html": "/paulcarkner/WeatherWebApp/index.html",
+    "main.fd16010e.css.map": "/paulcarkner/WeatherWebApp/static/css/main.fd16010e.css.map",
+    "main.0802528a.js.map": "/paulcarkner/WeatherWebApp/static/js/main.0802528a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd16010e.css",
+    "static/js/main.0802528a.js"
+  ]
+}
