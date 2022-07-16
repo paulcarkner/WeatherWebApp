@@ -14,7 +14,7 @@ export default class BackgroundMap extends React.Component {
     marker = null;
 
     loader = new Loader({
-        apiKey: "AIzaSyD8Vp_eqij2KVTiHCTi9mQgKaGCAZ5FRDQ",
+        apiKey: "AIzaSyD8Vp_eqij2KVTiHCTi9mQgKaGCAZ5FRDQ", //todo: hide in env, for demonstration only
         version: "weekly",
         libraries: ["places"]
     });

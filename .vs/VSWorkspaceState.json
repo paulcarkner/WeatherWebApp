@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\build\\static",
-    "\\public",
-    "\\public\\Assets",
-    "\\public\\Libraries",
-    "\\public\\Libraries\\DripIcons-Weather",
-    "\\public\\Libraries\\DripIcons-Weather\\webfont",
-    "\\src",
-    "\\src\\WeatherApp",
-    "\\src\\WeatherApp\\Utils"
+    ""
   ],
-  "SelectedNode": "\\src\\styles.css",
+  "SelectedNode": "\\C:\\Users\\Paul\\Source\\Repos\\WeatherWebApp",
   "PreviewInSolutionExplorer": false
 }
