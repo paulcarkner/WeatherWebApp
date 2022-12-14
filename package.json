@@ -1,10 +1,9 @@
 {
-  "name": "react",
+  "name": "weatherwebapp",
   "version": "1.0.0",
-  "description": "React example starter project",
+  "description": "Sample Weather Web App",
   "keywords": [
-    "react",
-    "starter"
+    "react"
   ],
   "main": "src/index.js",
   "dependencies": {
@@ -32,5 +31,15 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulcarkner/WeatherWebApp.git"
+  },
+  "author": "Paul Carkner",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/paulcarkner/WeatherWebApp/issues"
+  },
+  "homepage": "/paulcarkner/WeatherWebApp"
 }
