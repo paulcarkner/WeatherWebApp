@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\public",
+    "\\src",
+    "\\src\\WeatherApp"
   ],
   "PreviewInSolutionExplorer": false
 }

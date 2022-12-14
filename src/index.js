@@ -5,6 +5,7 @@ import App from "./WeatherApp/App";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
+const headTags = []; 
 
 root.render(
   <StrictMode>

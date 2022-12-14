@@ -53,10 +53,20 @@ export default class App extends React.Component {
     }
 
     render() {
+        document.title = "Weather Map App";
+
         return <div className={Style.app} style={{ backgroundImage: `linear-gradient(180deg, hsl(${this.state.style.gradient.start.hue}deg ${this.state.style.gradient.start.sat}% ${this.state.style.gradient.start.lum}%), hsl(${this.state.style.gradient.end.hue}deg ${this.state.style.gradient.end.sat}% ${this.state.style.gradient.end.lum}%))` }} >
             <AppBackground location={this.state.location} weather={this.state.weather} style={this.state.style} />
             <UI location={this.state.location} weather={this.state.weather} storedLocations={this.state.storedLocations} handleLocationChange={this.handleLocationChange} style={this.state.style} locationModalRef={this.locationModal} handleRemoveLocation={this.handleRemoveLocation } />
             <LocationModal ref={this.locationModal} changeHandler={this.handleLocationChange} />
+
+            <script src="https://unpkg.com/@googlemaps/js-api-loader@1.0.0/dist/index.min.js"></script>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+            <link rel="stylesheet" href="/Libraries/DripIcons-Weather/webfont/webfont.css" />
+
         </div>;
     }
 }

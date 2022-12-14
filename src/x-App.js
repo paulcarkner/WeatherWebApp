@@ -18,6 +18,7 @@ export default class App extends React.Component {
 
     render() {
         return <div className="App">
+            <div>I'm here!</div>
             <div id="mapContainer"><Map location={this.state.location} /></div>
             <Search changeHandler={this.handleLocationChange} />
         </div>;
@@ -531,10 +532,10 @@ const countryCodes = {
     CR: 'Costa Rica',
     HR: 'Croatia',
     CU: 'Cuba',
-    CW: 'Curaçao',
+    CW: 'Curaï¿½ao',
     CY: 'Cyprus',
     CZ: 'Czechia',
-    CI: 'Côte d\'Ivoire',
+    CI: 'Cï¿½te d\'Ivoire',
     DK: 'Denmark',
     DJ: 'Djibouti',
     DM: 'Dominica',
@@ -659,8 +660,8 @@ const countryCodes = {
     RO: 'Romania',
     RU: 'Russian Federation (the)',
     RW: 'Rwanda',
-    RE: 'Réunion',
-    BL: 'Saint Barthélemy',
+    RE: 'Rï¿½union',
+    BL: 'Saint Barthï¿½lemy',
     SH: 'Saint Helena, Ascension and Tristan da Cunha',
     KN: 'Saint Kitts and Nevis',
     LC: 'Saint Lucia',
@@ -724,5 +725,5 @@ const countryCodes = {
     YE: 'Yemen',
     ZM: 'Zambia',
     ZW: 'Zimbabwe',
-    AX: 'Åland Islands',
+    AX: 'ï¿½land Islands',
 };
