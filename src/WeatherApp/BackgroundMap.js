@@ -1,7 +1,7 @@
 import Style from "./BackgroundMap.module.css";
 import React from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
-import { GoogleMapsApi } from '@googlemaps';
+//import { GoogleMapsApi } from '@googlemaps';
 //import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 
