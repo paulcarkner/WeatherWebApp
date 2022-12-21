@@ -1,6 +1,8 @@
 import Style from "./BackgroundMap.module.css";
 import React from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
+import { GoogleMapsApi } from '@googlemaps';
+//import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 
 export default class BackgroundMap extends React.Component {
@@ -12,6 +14,7 @@ export default class BackgroundMap extends React.Component {
 
     map = null;
     marker = null;
+    google = null;
 
     loader = new Loader({
         apiKey: "AIzaSyC7r91IbCUuDCqHJJLngX1QkC_7D7ybeD4", //restricted key to this domain, todo: hide in env, for demonstration only
@@ -23,6 +26,7 @@ export default class BackgroundMap extends React.Component {
         this.loader
             .load()
             .then((google) => {
+                this.google = google;
                 this.map = new google.maps.Map(this.mapRef.current, {
                     center: {
                         lat: this.props.location.lat,
@@ -209,11 +213,11 @@ export default class BackgroundMap extends React.Component {
             this.setState({ isLoadDelayed: true });
             return;
         }
-        this.map.setCenter(new google.maps.LatLng(this.props.location.lat, this.props.location.lon));
+        this.map.setCenter(new this.google.maps.LatLng(this.props.location.lat, this.props.location.lon));
         this.map.setZoom(9);
         if (this.marker) this.marker.setMap(null);
-        this.marker = new google.maps.Marker({
-            position: new google.maps.LatLng(this.props.location.lat, this.props.location.lon),
+        this.marker = new this.google.maps.Marker({
+            position: new this.google.maps.LatLng(this.props.location.lat, this.props.location.lon),
             title: null,
         });
         this.marker.setMap(this.map);

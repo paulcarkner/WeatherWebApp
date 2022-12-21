@@ -35,7 +35,7 @@ export default class App extends React.Component {
             alert("You cannot remove the last location from your stored locations.");
             return;
         }
-        if (!confirm("Are you sure you want to remove this location from your stored locations?")) return;
+        if (!window.confirm("Are you sure you want to remove this location from your stored locations?")) return;
         let filteredLocations = this.state.storedLocations.filter(loc => loc.lat != this.state.location.lat || loc.lon != this.state.location.lon);
         this.setState({ storedLocations: filteredLocations }, () => {
             this.saveStoredLocations();
