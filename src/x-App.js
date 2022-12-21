@@ -373,7 +373,7 @@ class Search extends React.Component {
             this.setState({ results: [] });
             return;
         }
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${q}&limit=5&appid=${apiKey}`)
+        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${q}&limit=5&appid=${apiKey}`)
             .then(res => res.json())
             .then(data => {
                 this.setState({ results: data });
