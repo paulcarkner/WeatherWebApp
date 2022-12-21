@@ -195,7 +195,7 @@ export default class BackgroundMap extends React.Component {
                         }
                     ],
                     zoom: 9,
-                    draggable: false,
+                    // draggable: false,
                     zoomControl: false,
                     scrollwheel: false,
                     disableDoubleClickZoom: true
@@ -208,7 +208,7 @@ export default class BackgroundMap extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.location == prevProps?.location) return;
+        if (this.props.location === prevProps?.location) return;
         if (!this.state.isMounted) {
             this.setState({ isLoadDelayed: true });
             return;

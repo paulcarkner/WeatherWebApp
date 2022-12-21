@@ -1,15 +1,15 @@
-import Style from "./WeatherIcon.module.css";
+//import Style from "./WeatherIcon.module.css";
 import React from 'react';
 import { UNIXtoDateTime } from "./Utils/Weather.js";
 
 export default class WeatherIcon extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     render() {
-        if (this.props.weatherCode == undefined) {
-            return <img src="/Assets/Spinner-1s-24px.svg" />
+        if (this.props.weatherCode === undefined) {
+            return <img src="/Assets/Spinner-1s-24px.svg" alt="Loading..." />
         }
         return <div className={"diw-" + iconLookup[this.props.weatherCode][Math.abs(UNIXtoDateTime(this.props.time, this.props.timezone).getUTCHours() - 14.5) < 7 ? "day" : "night"]} style={{ fontSize: this.props.size }}></div>;
     }

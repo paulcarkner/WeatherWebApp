@@ -5,12 +5,12 @@ import WeatherTemp from './WeatherTemp';
 import ForecastDays from './ForecastDays';
 import LineChart from './LineChart';
 import ForecastDetail from './ForecastDetail';
-import { processTemp, UNIXtoDateTime, getUTCTime, getUTCDay } from './Utils/Weather.js';
+import { processTemp, UNIXtoDateTime, getUTCTime } from './Utils/Weather.js';
 
 export default class ForecastContainer extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     render() {
         return <div className={Style.forecastContainer}>
@@ -20,9 +20,9 @@ export default class ForecastContainer extends React.Component {
 }
 
 class Forecast extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     render() {
         return <div className={Style.forecastPanel} style={{ backgroundImage: `linear-gradient(180deg, hsl(${this.props.style.gradient.start.hue}deg ${this.props.style.gradient.start.sat}% ${this.props.style.gradient.start.lum}%), hsl(${this.props.style.gradient.end.hue}deg ${this.props.style.gradient.end.sat}% ${this.props.style.gradient.end.lum}%))` }}>
@@ -37,7 +37,7 @@ class Forecast extends React.Component {
                     <div className={Style.currentMainTemp}><WeatherTemp temp={this.props.weather.current.temp} decimals={1} /></div>
                 </div>
                 <div>
-                    <LineChart data={this.props.weather.hourly.slice(1, 8).map(hour => { let h = UNIXtoDateTime(hour.dt, this.props.weather.timezone_offset).getUTCHours(); return {x: (h == 0) ? "12AM" : (h > 12) ? (h - 12) + "PM" : h + "AM", y: parseFloat(processTemp(hour.temp, 1))}; }) } append="C" major="1" />
+                    <LineChart data={this.props.weather.hourly.slice(1, 8).map(hour => { let h = UNIXtoDateTime(hour.dt, this.props.weather.timezone_offset).getUTCHours(); return {x: (h === 0) ? "12AM" : (h > 12) ? (h - 12) + "PM" : h + "AM", y: parseFloat(processTemp(hour.temp, 1))}; }) } append="C" major="1" />
                 </div>
             </div>
             <div className={Style.divider}></div>
@@ -65,7 +65,7 @@ class Forecast extends React.Component {
                 </div>
                 <div className={Style.sectionTitle}><span>Chance Of Rain</span></div>
                 <div>
-                    <LineChart data={this.props.weather.hourly.slice(1, 26).map(hour => { let h = UNIXtoDateTime(hour.dt, this.props.weather.timezone_offset).getUTCHours(); return { x: (h == 0) ? "12AM" : (h > 12) ? (h - 12) + "PM" : h + "AM", y: Math.floor(hour.pop * 100) }; })} min="0" max="100" append="%" major="3" />
+                    <LineChart data={this.props.weather.hourly.slice(1, 26).map(hour => { let h = UNIXtoDateTime(hour.dt, this.props.weather.timezone_offset).getUTCHours(); return { x: (h === 0) ? "12AM" : (h > 12) ? (h - 12) + "PM" : h + "AM", y: Math.floor(hour.pop * 100) }; })} min="0" max="100" append="%" major="3" />
                 </div>
                 <div className={Style.sectionTitle}><span>Next 7 Days</span></div>
                 <div>

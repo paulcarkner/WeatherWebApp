@@ -1,12 +1,12 @@
-import Style from "./UI.module.css";
+//import Style from "./UI.module.css";
 import React from 'react';
 import LocationList from './LocationList';
 import ForecastContainer from './ForecastContainer';
 
 export default class UI extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
         return <div>

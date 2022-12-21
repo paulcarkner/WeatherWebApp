@@ -3,9 +3,9 @@ import React from 'react';
 
 
 export default class ForecastDetail extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     render() {
         return <div>

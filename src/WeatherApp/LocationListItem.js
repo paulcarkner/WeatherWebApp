@@ -3,9 +3,9 @@ import React from 'react';
 import WeatherPreview from "./WeatherPreview";
 
 export default class LocationListItem extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     changeLocation = (e) => {
         this.props.handleLocationChange(this.props.location);
@@ -13,7 +13,7 @@ export default class LocationListItem extends React.Component {
     }
 
     render() {
-        return <a className={Style.locationListItem} onClick={this.changeLocation}>
+        return <a className={Style.locationListItem} onClick={this.changeLocation} href="#">
             <div className={Style.city}>{this.props.location.name}</div>
             <div className={Style.forecast}>
                 <WeatherPreview location={this.props.location} weather={null} />

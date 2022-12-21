@@ -1,6 +1,6 @@
 import Style from "./App.module.css";
 import React from 'react';
-import { fetchForecast, UNIXtoDateTime, getWeatherStyle } from './Utils/Weather.js';
+import { fetchForecast, getWeatherStyle } from './Utils/Weather.js';
 import AppBackground from "./AppBackground";
 import LocationModal from "./LocationModal";
 import UI from "./UI";
@@ -14,14 +14,14 @@ export default class App extends React.Component {
             storedLocations: JSON.parse(localStorage.getItem("WeatherApp_StoredLocations")),
             style: getWeatherStyle(1, 0, 2, 0)
         }
-        if (this.state.storedLocations == null || this.state.storedLocations.length == 0) this.state.storedLocations = [{ "lat": -34.9281805, "lon": 138.5999312, "name": "Adelaide", "state": "South Australia", "country": "AU" }, { "lat": 39.906217, "lon": 116.3912757, "name": "Beijing", "state": "Beijing", "country": "CN" }, { "lat": -6.8160837, "lon": 39.2803583, "name": "Dar es Salaam", "country": "TZ" }, { "lat": 51.5073219, "lon": -0.1276474, "name": "London", "state": "England", "country": "GB" }, { "lat": 28.6138954, "lon": 77.2090057, "name": "New Delhi", "state": "Delhi", "country": "IN" }, { "lat": 43.6534817, "lon": -79.3839347, "name": "Toronto", "state": "Ontario", "country": "CA" }, { "lat": 49.2608724, "lon": -123.113952, "name": "Vancouver", "state": "British Columbia", "country": "CA" }];
+        if (this.state.storedLocations === null || this.state.storedLocations.length === 0) this.state.storedLocations = [{ "lat": -34.9281805, "lon": 138.5999312, "name": "Adelaide", "state": "South Australia", "country": "AU" }, { "lat": 39.906217, "lon": 116.3912757, "name": "Beijing", "state": "Beijing", "country": "CN" }, { "lat": -6.8160837, "lon": 39.2803583, "name": "Dar es Salaam", "country": "TZ" }, { "lat": 51.5073219, "lon": -0.1276474, "name": "London", "state": "England", "country": "GB" }, { "lat": 28.6138954, "lon": 77.2090057, "name": "New Delhi", "state": "Delhi", "country": "IN" }, { "lat": 43.6534817, "lon": -79.3839347, "name": "Toronto", "state": "Ontario", "country": "CA" }, { "lat": 49.2608724, "lon": -123.113952, "name": "Vancouver", "state": "British Columbia", "country": "CA" }];
         this.state.location = this.state.storedLocations[0];
         this.locationModal = React.createRef();
     }
 
     handleLocationChange = (data) => {
         let locationParams = { lat: data.lat, lon: data.lon, name: data.name, state: data.state, country: data.country };
-        if (!this.state.storedLocations.some(loc => loc.lat == locationParams.lat && loc.lon == locationParams.lon)) {
+        if (!this.state.storedLocations.some(loc => loc.lat === locationParams.lat && loc.lon === locationParams.lon)) {
             this.setState({ storedLocations: [...this.state.storedLocations, locationParams] }, () => {
                 this.saveStoredLocations();
             });
@@ -31,12 +31,12 @@ export default class App extends React.Component {
     }
 
     handleRemoveLocation = () => {
-        if (this.state.storedLocations.length == 1) {
+        if (this.state.storedLocations.length === 1) {
             alert("You cannot remove the last location from your stored locations.");
             return;
         }
         if (!window.confirm("Are you sure you want to remove this location from your stored locations?")) return;
-        let filteredLocations = this.state.storedLocations.filter(loc => loc.lat != this.state.location.lat || loc.lon != this.state.location.lon);
+        let filteredLocations = this.state.storedLocations.filter(loc => loc.lat !== this.state.location.lat || loc.lon !== this.state.location.lon);
         this.setState({ storedLocations: filteredLocations }, () => {
             this.saveStoredLocations();
             this.handleLocationChange(this.state.storedLocations[0]);

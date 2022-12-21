@@ -51,7 +51,7 @@ export default class LineChart extends React.Component {
                         align: 'top',
                         offset: -2,
                         formatter: (d, context) => {
-                            if (context.dataIndex % parseInt(this.props.major) != 0) return null;
+                            if (context.dataIndex % parseInt(this.props.major) !== 0) return null;
                             return d + this.props.append;
                         }
                     }
@@ -87,7 +87,7 @@ export default class LineChart extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props == prevProps) return;
+        if (this.props === prevProps) return;
         this.canvasChart.destroy();
         this.componentDidMount();
     }

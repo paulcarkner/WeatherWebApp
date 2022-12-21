@@ -2,9 +2,9 @@ import Style from "./LocationAddButton.module.css";
 import React from 'react';
 
 export default class LocationAddButton extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     showLocationAddModal = (event) => {
         this.props.locationModalRef.current.setState({ isShown: true });

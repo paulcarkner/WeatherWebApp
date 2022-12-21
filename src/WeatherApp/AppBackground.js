@@ -3,9 +3,9 @@ import React from 'react';
 import BackgroundMap from "./BackgroundMap";
 
 export default class AppBackground extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     render() {
         return <div className={Style.full}>
@@ -16,9 +16,9 @@ export default class AppBackground extends React.Component {
 }
 
 class BackgroundLandscape extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     render() {
         return <svg className={Style.svg}>

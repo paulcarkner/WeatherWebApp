@@ -16,7 +16,7 @@ export default class Search extends React.Component {
     }
 
     fetchGeoLocation = (q) => {
-        if (q == "") {
+        if (q === "") {
             this.setState({ results: [] });
             return;
         }
@@ -37,9 +37,9 @@ export default class Search extends React.Component {
 }
 
 class SearchBar extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
 
     render() {
@@ -70,7 +70,7 @@ class SearchInput extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.text == prevProps.text) return;
+        if (this.props.text === prevProps.text) return;
         //console.log(this.state.inputValue + ":" + this.props.text);
         this.setState({ inputValue: this.props.text });
     }
@@ -82,12 +82,12 @@ class SearchInput extends React.Component {
 }
 
 class SearchResultsList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
-        if (this.props.results.length == 0) {
+        if (this.props.results.length === 0) {
             return <div className={Style.searchResults}><span className={Style.loadingIcon + " material-icons-outlined"}>autorenew</span></div>;
         }
         return <div className={Style.searchResults}>
@@ -97,9 +97,9 @@ class SearchResultsList extends React.Component {
 }
 
 class SearchResult extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     //selectLocation = () => {
     //    //console.log(this.props.result);
@@ -171,10 +171,10 @@ const countryCodes = {
     CR: 'Costa Rica',
     HR: 'Croatia',
     CU: 'Cuba',
-    CW: 'Curaçao',
+    CW: 'Curaï¿½ao',
     CY: 'Cyprus',
     CZ: 'Czechia',
-    CI: 'Côte d\'Ivoire',
+    CI: 'Cï¿½te d\'Ivoire',
     DK: 'Denmark',
     DJ: 'Djibouti',
     DM: 'Dominica',
@@ -299,8 +299,8 @@ const countryCodes = {
     RO: 'Romania',
     RU: 'Russian Federation (the)',
     RW: 'Rwanda',
-    RE: 'Réunion',
-    BL: 'Saint Barthélemy',
+    RE: 'Rï¿½union',
+    BL: 'Saint Barthï¿½lemy',
     SH: 'Saint Helena, Ascension and Tristan da Cunha',
     KN: 'Saint Kitts and Nevis',
     LC: 'Saint Lucia',
@@ -364,5 +364,5 @@ const countryCodes = {
     YE: 'Yemen',
     ZM: 'Zambia',
     ZW: 'Zimbabwe',
-    AX: 'Åland Islands',
+    AX: 'ï¿½land Islands',
 };
