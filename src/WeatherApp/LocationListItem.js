@@ -13,12 +13,12 @@ export default class LocationListItem extends React.Component {
     }
 
     render() {
-        return <a className={Style.locationListItem} onClick={this.changeLocation} href="#">
+        return <button className={Style.locationListItem} onClick={this.changeLocation}>
             <div className={Style.city}>{this.props.location.name}</div>
             <div className={Style.forecast}>
                 <WeatherPreview location={this.props.location} weather={null} />
             </div>
             <div className={Style.region}>{(this.props.location.state ? this.props.location.state + ", " : "")}{this.props.location.country}</div>
-        </a>;
+        </button>;
     }
 }

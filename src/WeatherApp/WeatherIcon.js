@@ -1,6 +1,10 @@
 //import Style from "./WeatherIcon.module.css";
 import React from 'react';
 import { UNIXtoDateTime } from "./Utils/Weather.js";
+import SpinnerImg from "../Assets/Spinner-1s-24px.svg";
+import Icons from "../Assets/DripIcons-Weather/webfont.module.css";
+//import "../Assets/DripIcons-Weather/dripicons-weather.svg";
+
 
 export default class WeatherIcon extends React.Component {
     // constructor(props) {
@@ -9,9 +13,9 @@ export default class WeatherIcon extends React.Component {
 
     render() {
         if (this.props.weatherCode === undefined) {
-            return <img src="/Assets/Spinner-1s-24px.svg" alt="Loading..." />
+            return <img src={SpinnerImg} alt="Loading..." />
         }
-        return <div className={"diw-" + iconLookup[this.props.weatherCode][Math.abs(UNIXtoDateTime(this.props.time, this.props.timezone).getUTCHours() - 14.5) < 7 ? "day" : "night"]} style={{ fontSize: this.props.size }}></div>;
+        return <div className={`${Icons.diw} ${Icons["diw-" + iconLookup[this.props.weatherCode][Math.abs(UNIXtoDateTime(this.props.time, this.props.timezone).getUTCHours() - 14.5) < 7 ? "day" : "night"]]}`} style={{ fontSize: this.props.size }}></div>;
     }
 }
 

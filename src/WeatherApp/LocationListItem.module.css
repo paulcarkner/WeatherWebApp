@@ -6,6 +6,8 @@
     border: none;
     border-right: 1px solid #fff8;
     cursor: pointer;
+    color: #fff;
+    text-align: left;
 }
 
 .city {
