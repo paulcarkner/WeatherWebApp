@@ -115,10 +115,6 @@
     }
 
 
-.currentDetails {
-
-}
-
-.currentDetails [class^="diw-"] {
+.currentDetails [class^="diw-"] { /* drip icons */
     font-size: 2em;
 }
