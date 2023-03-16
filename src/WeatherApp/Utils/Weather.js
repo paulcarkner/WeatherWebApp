@@ -14,7 +14,7 @@ export function processTemp(temp, decimals) {
 
 //convert UNIX time code to DateTime
 export function UNIXtoDateTime(unix, offset) {
-  return new Date((unix + offset) * 1000);
+  return new Date((unix + offset + new Date().getTimezoneOffset() * 60) * 1000);
 }
 
 //convert time to UTC
@@ -43,14 +43,16 @@ export function getWeatherStyle(time, sunrise, sunset, cloud) {
       isDaylight: isDaylight, //sun or moon
       x: [85, 90, 90, 80, 65, 35, 20, 10, 10, 15][sunPercent], //sun/moon location % on page
       y: [50, 35, 25, 15, 10, 10, 15, 25, 35, 50][sunPercent],
-      halo: { //sun/moon halo colour (yellow/blue)
+      halo: {
+        //sun/moon halo colour (yellow/blue)
         hue: isDaylight ? 60 : 210,
         sat: 100,
         lum: isDaylight ? 50 : 70,
       },
       opacity: 100 - cloud, //hide sun/moon by cloud percentage
     },
-    gradient: { //create sky gradient colouring
+    gradient: {
+      //create sky gradient colouring
       start: {
         hue: (isDaylight
           ? [277, 227, 217, 217, 217, 217, 217, 217, 220, 306]
